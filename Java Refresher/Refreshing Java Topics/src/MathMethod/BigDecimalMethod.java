@@ -1,0 +1,18 @@
+package MathMethod;
+
+public class BigDecimalMethod {
+	
+	/* java.math.BigDecimal
+	 * BigDecimal(int) can be int, double, long, string
+	 * add(), subtract(), multiply(), divide()
+	 * setScale(scale, roundingMode) scale - dp, roundingMode - RoundingMode.HALF_UP, round up from 5
+	 * doubleValue() - to double
+	 * toString() - to String obj
+	 * 
+	 * java.math.RoundingMode (Fixes rounding error)
+	 * HALF_UP, round halfway values up to nearest neighbor
+	 * HALF_DOWN, ... down to nearest neighbor
+	 * HALF_EVEN, ... toward nearest even neighbor
+	 */
+
+}
