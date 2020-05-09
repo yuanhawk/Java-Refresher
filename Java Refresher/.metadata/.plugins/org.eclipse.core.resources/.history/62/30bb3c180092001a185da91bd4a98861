@@ -1,0 +1,9 @@
+package db;
+
+import en.CustomerType;
+
+public interface CustomerReader {
+	
+	int getDiscountPercent(CustomerType type);
+
+}

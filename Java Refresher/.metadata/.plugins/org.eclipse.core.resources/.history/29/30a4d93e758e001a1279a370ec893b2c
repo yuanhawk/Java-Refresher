@@ -1,0 +1,11 @@
+package Arithmetic;
+
+import java.lang.Math;
+
+public class MathClass {
+
+	public static void main(String[] args) {
+		long result = Math.round(1.667);
+		System.out.println(result);
+	}
+}

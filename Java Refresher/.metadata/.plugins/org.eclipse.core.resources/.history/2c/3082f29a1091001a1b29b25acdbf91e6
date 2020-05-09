@@ -1,0 +1,9 @@
+package ui;
+
+import business.Employee;
+
+public interface Displayable {
+	
+	String toString();
+
+}

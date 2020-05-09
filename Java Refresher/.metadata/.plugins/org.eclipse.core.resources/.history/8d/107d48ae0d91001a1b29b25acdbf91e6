@@ -1,0 +1,11 @@
+package ui;
+
+import business.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Displayable Test application");
+		
+	}
+}

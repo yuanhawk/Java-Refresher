@@ -1,0 +1,25 @@
+package StringMethod;
+
+import java.util.Scanner;
+
+public class ProductLister {
+	
+	private static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Product Lister");
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			
+		}
+		
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+
+}

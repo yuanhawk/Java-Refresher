@@ -1,0 +1,26 @@
+package MainMethod;
+
+import java.util.Scanner;
+
+public class ProductViewer {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+	
+		displayLine("Welcome to the Product Viewer");
+		displayLine();
+		
+		
+	}
+	
+	public static void displayLine() {
+		System.out.println();
+	}
+	
+	public static void displayLine(String s) {
+		System.out.println(s);
+	}
+	
+
+}

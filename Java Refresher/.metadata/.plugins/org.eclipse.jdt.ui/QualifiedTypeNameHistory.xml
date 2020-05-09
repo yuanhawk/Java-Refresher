@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="business.LineItem"/>
+    <fullyQualifiedTypeName name="ui.main"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="GetterSetter.Product"/>
+    <fullyQualifiedTypeName name="java.text.NumberFormat"/>
+    <fullyQualifiedTypeName name="business.Product"/>
+    <fullyQualifiedTypeName name="db.ProductDB"/>
+    <fullyQualifiedTypeName name="db.DepartmentConstants"/>
+    <fullyQualifiedTypeName name="business.Displayable"/>
+    <fullyQualifiedTypeName name="business.EmployeeReader"/>
+    <fullyQualifiedTypeName name="db.EmployeeDB"/>
+    <fullyQualifiedTypeName name="ui.Displayable"/>
+    <fullyQualifiedTypeName name="business.Employee"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+</qualifiedTypeNameHistroy>

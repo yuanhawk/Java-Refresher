@@ -1,0 +1,24 @@
+package String;
+
+public class StringBuilder {
+	
+	/* java.lang.StringBuilder
+	 * StringBuilder() - capacity of 16 chars
+	 * StringBuilder(capacity) - capacity of specified num of chars
+	 * StringBuilder(String) - capacity of String + additional 16 chars
+	 * 
+	 * append(data) - add object to the end of the String
+	 * capacity() - capacity of StringBuilder obj
+	 * length() - return num of chars
+	 * insert(index, data)
+	 * replace(startIndex, endIndex, String)
+	 * delete(startIndex, endIndex)
+	 * deleteCharAt(index)
+	 * setCharAt(index, character) - changes the char at specified index
+	 * charAt(index) - return char value for character at specified index
+	 * substring(index)
+	 * subString(startIndex, endIndex)
+	 * toString() - returns fr StringBuilder obj to String obj
+	 */
+
+}

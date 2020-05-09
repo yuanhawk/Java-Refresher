@@ -1,0 +1,26 @@
+package ObjectMethod;
+
+import java.text.NumberFormat;
+
+public class Product {
+
+	private String code, desc;
+	private double price;
+	protected static int count = 0;
+	
+	public Product() {
+	}
+	
+	// getter & setter for code, desc, price
+	// instance var
+	
+	@Override
+	public String toString() {
+		return desc;
+	}
+	
+	public static int getCount() {
+		// create public access for the count variable
+		return count;
+	}
+}

@@ -1,0 +1,5 @@
+package InterfaceMethodHierarchy;
+
+public interface ProductConstants {
+
+}

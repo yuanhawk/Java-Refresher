@@ -1,0 +1,5 @@
+package InterfaceMethod;
+
+public interface Printable {
+	void print(); // method is automatically public and abstract
+}

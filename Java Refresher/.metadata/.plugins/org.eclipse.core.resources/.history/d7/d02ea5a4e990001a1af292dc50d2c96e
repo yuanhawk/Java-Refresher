@@ -1,0 +1,23 @@
+package InterfaceMethod;
+
+public class Product implements Iprintable {
+	
+	private String code, desc;
+	private double price;
+	
+	public Product(String code, String desc, double price) {
+		this.code = code;
+		this.desc = desc;
+		this.price = price;
+	}
+	
+	// get and set methods for the fields
+	
+	public void print() { // implements the Printable interface
+		System.out.println(desc);
+	}
+	
+	/*Iprintable p = ProductDB.getProduct("java"); - using print method of Product class
+	p.print();*/
+
+}

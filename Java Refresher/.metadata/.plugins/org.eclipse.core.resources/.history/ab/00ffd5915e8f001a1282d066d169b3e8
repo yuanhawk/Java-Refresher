@@ -1,0 +1,152 @@
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.text.NumberFormat;
+
+public class ProductLister {
+	
+	private static Scanner sc = new Scanner(System.in);
+	private static ArrayList<String> product = new ArrayList<String>();
+	
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Product Lister\n");
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			String code = getInput("Enter product code: ");
+			product.add(code); //Saving codes in arraylist
+			input = getInput("Another product? (y/n): ");
+		}
+		
+		StringBuilder message = new StringBuilder(); // Overall msg
+		
+		String header1 = "Code";
+		String space1 = getSpace(product, header1.length()); //Get largest space of code
+		
+		String header2 = "Description";
+		ArrayList<String> desc = getDescription(product);
+		String space2 = getSpace(desc, header2.length());
+		
+		String header3 = "Price";
+		ArrayList<String> price = getPrice(product);
+		String space3 = getSpace(price, header3.length());
+		
+		message.append(header1 + space1 + header2 + space2 + header3 + space3);
+		
+		String border1 = getBorder(product, header1.length());
+		String border2 = getBorder(desc, header2.length());
+		String border3 = getBorder(price, header3.length());
+		
+		message.append("\n"+border1+border2+border3+"\n");
+		
+		StringBuilder innerMessage = new StringBuilder();
+		for (int i = 0; i < product.size(); i++) {
+			innerMessage.append(product.get(i) + getSpaceInner(product, border1, i));
+			innerMessage.append(desc.get(i) + getSpaceInner(desc, border2, i));
+			System.out.println(innerMessage);
+			innerMessage.append(price.get(i) + getSpaceInner(price, border1, i) + "\n");
+		}
+		
+		message.append(innerMessage);
+		
+		System.out.println(message);
+		
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+	public static String getSpace(ArrayList<String> product, int length) {
+		//Comparing longest product length vs header length
+		StringBuilder spacesb = new StringBuilder();
+		int newl = 0; //longest product length
+		for (String c: product) {
+			if (c.length() > newl) {
+				newl = c.length();
+			}
+		}
+		
+		String space = "";
+		if (newl > length) { //longest product length > header length
+			newl -= length;
+			for (int i = 0; i < newl; i++) {
+				spacesb.append(" ");
+			}
+			spacesb.append(" ");
+			space = spacesb.toString();
+		} else {
+			spacesb.append(" ");
+			space = spacesb.toString();
+		}
+		return space;
+	}
+	
+	public static String getSpaceInner(ArrayList<String> product, String border, int i) {
+		StringBuilder spacesb = new StringBuilder();
+		for (int len = product.get(i).length(); len < border.length(); len++) {
+			spacesb.append(" ");
+		}
+		String space = spacesb.toString();
+		return space;
+	}
+	
+	public static String getBorder(ArrayList<String> product, int length) {
+		// Comparing longest product length vs header length
+		int newl = 0;
+		StringBuilder bordersb = new StringBuilder();
+		for (String c: product) {
+			if (c.length() > newl) {
+				newl = c.length();
+			}
+		}
+		if (length > newl) {
+			newl = length;
+		}
+		
+		for (int i = 0; i < newl; i++) { // Append "=" for the longest length
+			bordersb.append("=");
+		}
+		bordersb.append(" ");
+		String border = bordersb.toString();
+		return border;
+	}
+	
+	public static ArrayList<String> getDescription(ArrayList<String> product) {
+		ArrayList<String> description = new ArrayList<String>();
+		String desc = "";
+		for (String c: product) {
+			if (c.equalsIgnoreCase("java")) {
+				desc = "Murach's Java Programming";
+				description.add(desc);
+			} else if (c.equalsIgnoreCase("mysql")) {
+				desc = "Murach's MySQL";
+				description.add(desc);
+			} else {
+				desc = "unknown";
+			}
+		}
+		return description;
+	}
+	
+	public static ArrayList<String> getPrice(ArrayList<String> product) {
+		ArrayList<String> priceFormatted = new ArrayList<String>();
+		NumberFormat cur = NumberFormat.getCurrencyInstance();
+		double price = 0.0;
+		for (String c: product) {
+			if (c.equalsIgnoreCase("java")) {
+				price = 57.50;
+				priceFormatted.add(cur.format(price));
+			} else if (c.equalsIgnoreCase("mysql")) {
+				price = 54.50;
+				priceFormatted.add(cur.format(price));
+			} else {
+				price = 0;
+			}
+		}
+		return priceFormatted;
+	}
+
+}

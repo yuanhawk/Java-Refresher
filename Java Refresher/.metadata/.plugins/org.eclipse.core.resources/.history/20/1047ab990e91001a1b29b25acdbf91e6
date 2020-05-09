@@ -1,0 +1,37 @@
+package business;
+
+public class Employee implements EmployeeReader {
+
+	private String name, desc, dept;
+	
+	public Employee() {
+		name = "";
+		desc = "";
+		dept = "";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	
+}

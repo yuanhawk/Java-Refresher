@@ -1,0 +1,20 @@
+package db;
+
+import business.Product;
+
+public class ProductDB implements ProductGettable{
+	
+	@Override
+	public Product getProduct(String code) {
+		
+		Product product = new Product();
+		
+		if (code.equalsIgnoreCase("java")) {
+			product.setCode(code);
+			product.setDesc("Murach's Java Programming");
+			product.setPrice(57.50);
+		}
+		return product;
+	}
+
+}

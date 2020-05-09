@@ -1,0 +1,11 @@
+package EnumMethod;
+
+public class EnumMethod {
+
+	/* Define a set of related constants, used to store related constants in a class or interface
+	 * For eg, Rounding<ode is an enum of the Java API to set the rounding mode for a BigDecimal obj
+	 * 
+	 * It is possible to override methods that an enum inherits from java.lang.Object & java.lang.Enu
+	 */
+	
+}

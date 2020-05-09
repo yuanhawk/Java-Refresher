@@ -1,0 +1,35 @@
+package db;
+
+import business.*;
+
+public class ProductDB {
+	
+	public static Product getProduct(String code) {
+		String desc, author, version;
+		double price;
+		
+		if (code.equalsIgnoreCase("java")) {
+			Book book = new Book();
+			book.setCode(code);
+			desc = "Murach's Java Programming";
+			price = 57.50;
+			author = "Joel Murach";
+			book.setDesc(desc);
+			book.setPrice(price);
+			book.setAuthor(author);
+			return book;
+		} else if (code.equalsIgnoreCase("eclipse")) {
+			Software software = new Software();
+			software.setCode(code);
+			desc = "Eclipse";
+			version = "4.4.2";
+			price = 0.00;
+			software.setDesc(desc);
+			software.setPrice(price);
+			software.setVersion(version);
+			return software;
+		}
+		
+	}
+
+}

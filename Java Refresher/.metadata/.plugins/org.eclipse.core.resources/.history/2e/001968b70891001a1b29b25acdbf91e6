@@ -1,0 +1,35 @@
+package business;
+
+import db.DepartmentConstants;
+
+public class Employee implements DepartmentConstants, Displayable {
+	
+	private String name, desc;
+	
+	public Employee() {
+		name = "";
+		desc = "";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	
+
+	@Override
+	public String getDisplayText() {
+		return name + " (" + desc + ")";
+	}
+}

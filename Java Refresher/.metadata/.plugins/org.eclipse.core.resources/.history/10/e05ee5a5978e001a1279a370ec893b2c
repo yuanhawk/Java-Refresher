@@ -1,0 +1,22 @@
+package MainMethod;
+
+public class DayOfTheWeek {
+	
+	public static void main(String[] args) {
+		String day = "Mon";
+		
+		switch(day) {
+			case "Mon":
+			case "Tue":
+			case "Wed":
+			case "Thu":
+			case "Fri":
+				System.out.println("Weekday");
+				break;
+			case "Sat":
+			case "Sun":
+				System.out.println("Weekend");
+		}
+	}
+
+}

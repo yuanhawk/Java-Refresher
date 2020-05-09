@@ -1,0 +1,39 @@
+package ui;
+
+import business.*;
+import db.ProductDB;
+
+import java.util.Scanner;
+
+public class Main {
+	
+	private static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Welcome to the Product Viewer");
+		
+		String input = "y";
+		int i = 1;
+		while (input.equalsIgnoreCase("y")) {
+		
+			String code = getInput("Enter product code: ");
+			
+			Product product = ProductDB.getProduct(code);
+			
+			String message = "Description: " + product.getDesc()
+							+ "Price: " + product.getPrice()
+							+ "\nProduct count: " + i;
+			
+			input = getInput("Continue? (y/n): ");		
+		}
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+
+}

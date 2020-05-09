@@ -1,0 +1,41 @@
+package MainMethod; // Package Statement
+
+public class MainMethod { // Class Declaration
+	
+	public static void main(String[] args) { // Main method declaration
+		System.out.println("Bye!"); //Oops don't use single quotes
+		System.out.println(); //To print sysout, use syso, Ctrl+Space
+	}
+
+}
+
+/*
+Syntax
+type variableName;
+variableName = value; - assignment
+
+int, double
+
+int quantity = 0; Reference it as integer
+int maxQuantity = 100;
+quantity = maxQuantity;  value of quantity is assigned to maxQuantity, which is 100
+
++-/*
+
+Capitalise String keyword because it is the name of a class, not a primitive data type, string is an array of chars
+
+Concatenation of string using +
+
+\n - New line, \t - tab, \r - Return, \" - Backslash
+
+java.lang - Fundamental class for primitive data types & strings
+java.util - Utility class, includingthose for getting input fr console
+java.text - Classes that handle text, format numbers and dates
+
+Common class
+java.lang.String
+java.lang.Integer
+java.lang.Double
+java.util.Scanner
+java.text.NumberFormat
+*/

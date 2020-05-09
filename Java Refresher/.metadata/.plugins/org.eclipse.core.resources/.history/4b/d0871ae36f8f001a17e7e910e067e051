@@ -1,0 +1,12 @@
+package Math;
+
+public class BigDecimal {
+	
+	/* BigDecimal(int) can be int, double, long, string
+	 * add(), subtract(), multiply(), divide()
+	 * setScale(scale, roundingMode) scale - dp, roundingMode - RoundingMode.HALF_UP, round up from 5
+	 * doubleValue()
+	 * toString()
+	 */
+
+}

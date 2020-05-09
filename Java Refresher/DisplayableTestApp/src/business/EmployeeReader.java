@@ -1,0 +1,6 @@
+package business;
+
+public interface EmployeeReader {
+	
+	Employee getEmployee(String name);
+}

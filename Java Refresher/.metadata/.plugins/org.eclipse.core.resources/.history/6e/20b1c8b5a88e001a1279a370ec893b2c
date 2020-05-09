@@ -1,0 +1,20 @@
+package CatchingException;
+
+import java.lang.Exception;
+import java.util.Scanner;
+
+public class EnterMonthlyInvestment {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter monthly investment: ");
+		
+		try {
+			System.out.println("Enter valid number");
+		} catch (Exception e) {
+			double monthlyInvestment = Double.parseDouble(sc.nextLine());
+		}
+		System.out.println(monthlyInvestment);
+	}
+
+}

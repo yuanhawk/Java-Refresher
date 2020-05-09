@@ -1,0 +1,55 @@
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class ProductLister {
+	
+	private static Scanner sc = new Scanner(System.in);
+	private static ArrayList<String> product = new ArrayList<String>();
+	
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Product Lister\n");
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			String code = getInput("Enter product code: ");
+			product.add(code);
+			input = getInput("Another product? (y/n): ");
+		}
+		
+		StringBuilder message = new StringBuilder();
+		StringBuilder space1 = new StringBuilder();
+		StringBuilder space2 = new StringBuilder();
+		StringBuilder border = new StringBuilder();
+		message.append("Code" + space2 + "Price\n");
+		message.append(border + "\n");
+		
+		int lengthCode = getLengthCode(product);
+		System.out.println(lengthCode);
+		for (int i = 0; i < lengthCode + 1; i++) {
+			space1.append(" ");
+		}
+		message.append(space1);
+		message.append("Description");
+		
+		System.out.println(message);
+		
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+	public static int getLengthCode(ArrayList<String> product) {
+		int lengthCode = 4;
+		for(String c: product) {
+			if (c.length() > lengthCode) {
+				lengthCode = c.length();
+			}
+		}
+		return lengthCode;
+	}
+
+}

@@ -1,0 +1,25 @@
+package db;
+
+import static en.CustomerType.*;
+
+import business.Customer;
+import en.CustomerType;
+
+public class CustomerDB implements CustomerReader{
+	
+	@Override
+	public double getDiscountPercent(CustomerType type) {
+		double discountPercent;
+		if (type == RETAIL) {
+			discountPercent = 0.1;
+		} else if (type == TRADE) {
+			discountPercent = 0.3;
+		} else if (type == COLLEGE) {
+			discountPercent = 0.2;
+		} else {
+			discountPercent = 0.0;
+		}
+		return discountPercent;
+	}
+
+}

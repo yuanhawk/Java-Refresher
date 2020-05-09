@@ -1,0 +1,36 @@
+package ObjectMethod;
+
+public class ObjectMethod {
+	
+	/* java.lang.Object
+	 * toString() - returns String object containing class name, followed by the @ symbol, followed hexadecimal representation of the has code
+	 * equals(Object) - returns true if var refers to the same obj
+	 * getClass() - returns Class obj that represents the type of obj
+	 * clone() - returns a copy of object as an Object
+	 * hashCode - returns an int value that represents the hash code for the obj
+	 * 
+	 *  It's recommended to override the toString method so that it returns a concise string
+	 *  
+	 *  Access modifers
+	 *  private - available within current class
+	 *  public - available to classes in all packages
+	 *  protected - available to classes in the same package and to subclass
+	 *  w/o access modifier - available to classes in the same package
+	 *  
+	 *  @Override - annotation for overriding a method
+	 *  
+	 *  if (p instanceof Book) {
+	 *  	syso("This is a Book obj");
+	 *  }
+	 *  Checks obj type
+	 *  
+	 *  Product p1 = new Product();
+	 *  Product p2 = p1;
+	 *  if (p1.equals(p2)) - true
+	 *  
+	 *  Product p1 = new Product();
+	 *  Product p2 = new Product();
+	 *  if (p1.equals(p2)) - false
+	 */
+
+}

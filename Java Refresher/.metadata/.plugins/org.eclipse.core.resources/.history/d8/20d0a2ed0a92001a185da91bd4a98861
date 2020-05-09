@@ -1,0 +1,12 @@
+package JavaCollectionFramework;
+
+public class JavaCollectionFrameWork {
+	
+	/* Collection - hold >= 1 obj
+	 * >Set: Collection of unique obj, unordered
+	 * >List: Ordered collection of obj (order of added item/sorted based on key value), allows duplicate elements
+	 * 
+	 * Map - similar to collection, but uses key-value pairs, 1 key - 1 value
+	 */
+
+}

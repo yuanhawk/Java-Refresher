@@ -1,0 +1,15 @@
+package CatchingException;
+
+import java.lang.NumberFormatException;
+import java.util.Scanner;
+
+public class EnterMonthlyInvestment {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter monthly investment: ");
+		double monthlyInvestment = Double.parseDouble(sc.nextLine());
+		System.out.println(monthlyInvestment);
+	}
+
+}

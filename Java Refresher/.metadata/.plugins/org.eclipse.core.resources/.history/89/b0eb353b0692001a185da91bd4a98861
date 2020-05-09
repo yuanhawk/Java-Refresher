@@ -1,0 +1,25 @@
+package en;
+
+import static business.Customer.*;
+
+public enum CustomerType implements CustomerTyper {
+
+	// Always store enums in a separate folder, so that you can import the package as static
+	
+	RETAIL,
+	TRADE,
+	COLLEGE;
+	
+	@Override
+	public String toString() {
+		String s = "";
+		if (ordinal() == 1) {
+			s = "toString: RETAIL";
+		} else if (ordinal() == 2) {
+			s = "toString: TRADE";
+		} else if (ordinal() == 3) {
+			s = "toString: COLLEGE";
+		}
+		return s;
+	}
+}

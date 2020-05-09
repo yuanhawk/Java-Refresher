@@ -1,0 +1,16 @@
+package EnumMethod;
+
+public class ShippingClass {
+	
+	static ShippingType secondDay = ShippingType.UPS_NEXT_DAY; // var secondDay the UPS_SECOND_DAY const
+	public static double getShippingAmount(ShippingType st) { // accepts enum is a parameter
+		double shippingAmount = 2.99;
+		if (st == ShippingType.UPS_NEXT_DAY) {
+			shippingAmount = 10.99;
+		} else if (st == ShippingType.UPS_SECOND_DAY) {
+			shippingAmount = 5.99;
+		}
+		return shippingAmount;
+	}
+
+}

@@ -1,0 +1,5 @@
+package EnumMethod;
+
+public enum EnumerationName {
+
+}

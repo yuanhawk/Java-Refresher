@@ -1,0 +1,10 @@
+package db;
+
+import business.Product;
+
+public interface ProductGettable {
+	
+	Product getProduct(String code);
+	String getProducts();
+
+}

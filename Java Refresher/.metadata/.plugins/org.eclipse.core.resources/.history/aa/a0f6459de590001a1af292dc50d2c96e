@@ -1,0 +1,26 @@
+package InterfaceMethod;
+
+public interface Iprintable {
+	/* type CONSTANT_NAME = value; static const
+	 * returnType methodName([parameterList]);
+	 */
+	void print(); // method is automatically public and abstract
+	// Most common use is to state a function that needs to be done
+}
+
+/*
+public interface ProductWrite { - all methods are public & abstract
+	boolean add(Product p);
+	boolean update(Product p);
+	boolena delete(Product p);
+}
+
+public interface DepartmentConstant { - all fields are public, static & final
+	int ADMIN = 1;
+	int EDITORIAL = 2;
+	int MARKETING = 3;
+}
+
+public interface Serializable { - tagging interface, used to identify that an obj is safe for certain type of operation: cloning/serialising
+}
+*/

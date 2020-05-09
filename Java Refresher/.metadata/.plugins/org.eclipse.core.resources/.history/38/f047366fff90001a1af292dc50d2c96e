@@ -1,0 +1,12 @@
+package business;
+
+public interface Printable {
+	
+	default void print(String code, String desc, double price) {
+		String message = "Code: " + code
+						+ "Description: " + desc
+						+ "Price: " + price;
+		System.out.println(message);
+	}
+
+}

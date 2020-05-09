@@ -1,0 +1,16 @@
+package ProductViewer;
+
+public class ProductDB {
+	
+	private String code, desc;
+	private double price;
+	
+	public String input;
+	
+	if (input.equalsIgnoreCase("java")) {
+		code = "java";
+		desc = "Murach's Beginning Java";
+		price = 
+	}
+
+}

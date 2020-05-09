@@ -1,0 +1,5 @@
+package InterfaceMethodHierarchy;
+
+public interface ProductDAO extends ProductReader, ProductWriter, ProductConstants {
+	// hierarchy of interface, extending with more methods, the constants & methods of the interface
+}

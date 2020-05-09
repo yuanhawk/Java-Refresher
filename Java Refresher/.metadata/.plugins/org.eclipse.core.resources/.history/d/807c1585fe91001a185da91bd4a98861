@@ -1,0 +1,12 @@
+package CustomerType;
+
+public enum CustomerType {
+
+	// Always store enums in a separate folder, so that you can import the package as static
+	
+	RETAIL,
+	TRADE,
+	COLLEGE;
+	
+	
+}

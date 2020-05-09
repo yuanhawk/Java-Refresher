@@ -1,0 +1,25 @@
+package InterfaceMethod;
+
+public interface PrintableInterface {
+	/* type CONSTANT_NAME = value; static const
+	 * returnType methodName([parameterList]);
+	 */
+	void print(); // method is automatically public and abstract
+}
+
+/*
+public interface ProductWrite {
+	boolean add(Product p);
+	boolean update(Product p);
+	boolena delete(Product p);
+}
+
+public interface DepartmentConstant {
+	int ADMIN = 1;
+	int EDITORIAL = 2;
+	int MARKETING = 3;
+}
+
+public interface Serializable {
+}
+*/

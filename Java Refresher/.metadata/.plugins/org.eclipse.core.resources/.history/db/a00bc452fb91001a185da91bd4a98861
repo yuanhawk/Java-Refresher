@@ -1,0 +1,9 @@
+package JavaDoc;
+
+public class JavaDoc {
+	
+	/** Javadoc begins with an additional *  on top of the /*
+	 * 
+	 */
+
+}

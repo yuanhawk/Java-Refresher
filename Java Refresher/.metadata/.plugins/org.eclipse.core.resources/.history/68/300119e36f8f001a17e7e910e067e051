@@ -1,0 +1,12 @@
+package Math;
+
+public class MathMethods {
+
+	/* java.lang.Math
+	 * round()
+	 * pow(num1, num2)
+	 * sqrt(num)
+	 * max(a,b)
+	 * min(a,b)
+	 */
+}

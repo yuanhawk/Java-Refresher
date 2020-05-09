@@ -1,0 +1,9 @@
+package InterfaceMethodHierarchy;
+
+public interface ProductConstants { // all constant are public static final
+	
+	int CODE_SIZE = 10;
+	int DESCRIPTION_SIZE = 34;
+	int PRICE_SIZE = 10;
+
+}

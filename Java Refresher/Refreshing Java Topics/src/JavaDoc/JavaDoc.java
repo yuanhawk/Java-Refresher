@@ -1,0 +1,21 @@
+package JavaDoc;
+
+public class JavaDoc {
+	
+	/** Javadoc begins with an additional *  on top of the /*
+	 * 
+	 * <code></code> // HTML tag that dispalys the text btw these tags with a monospaced font
+	 * @author // Identifies the author of the class
+	 * @version // Describes the current verision of the class
+	 * @param // Describes a paramter of a constructor or method
+	 * @return //Describes the value that's returned by a method
+	 * 
+	 * For example:
+	 * The <code> Product </code> class defines a product and is used
+	 * by the <code> LineItem </code> and <code> ProductDB </code> classes
+	 * @author yuanm
+	 * @version 1.0.0
+	 * 
+	 * To generate documentation: Project > Generate Javadoc, documentation is stored in a subfolder named doc
+	 */
+}

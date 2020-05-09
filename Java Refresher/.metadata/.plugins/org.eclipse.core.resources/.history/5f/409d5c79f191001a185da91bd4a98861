@@ -1,0 +1,13 @@
+package EnumMethod;
+
+public enum EnumerationName {
+	
+	// Within the enum, code the names of 1/2 constants, separating each name with a comma
+	
+	UPS_NEXT_DAY, // value of 0
+	UPS_SECOND_DAY, // value of 1
+	UPS_GROUND // value of 2
+
+	// Convention of storing enum in separate file so that enum is available to all classes within the app. So the file contains
+	// only enums
+}

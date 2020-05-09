@@ -1,0 +1,9 @@
+package business;
+
+import business.Customer;
+
+public interface CustomerReader {
+	
+	Customer getCustomer(String type);
+
+}

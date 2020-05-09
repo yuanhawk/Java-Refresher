@@ -1,0 +1,18 @@
+package ForLoop;
+
+import java.util.ArrayList;
+
+public class ForLoopMethod {
+	
+	public static void main (String[] args) {
+		ArrayList<String> hello = new ArrayList<String>(); //implicit 10
+		for (int i = 0; i < 10; i++) {
+			hello.add("Hello");
+		}
+		
+		for (String s: hello) {
+			System.out.println(s);
+		}
+	}
+
+}

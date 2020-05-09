@@ -1,0 +1,10 @@
+package InterfaceMethod;
+
+public class InterfaceMethod {
+	
+	/* starts off with interface keyword rather than a class keyword
+	 * all methods in an interface are public & abstract
+	 * implements - inherits fr the interface
+	 */
+
+}

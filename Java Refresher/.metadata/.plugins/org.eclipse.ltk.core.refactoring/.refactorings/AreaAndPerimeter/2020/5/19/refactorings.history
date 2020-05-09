@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;areaFormatted&apos; in &apos;Rectangle.Rectangle.getPerimeter()&apos; to &apos;perimeterFormatted&apos;&#x0D;&#x0A;- Original project: &apos;AreaAndPerimeter&apos;&#x0D;&#x0A;- Original element: &apos;Rectangle.Rectangle.getPerimeter().areaFormatted&apos;&#x0D;&#x0A;- Renamed element: &apos;areaFormatted&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;areaFormatted&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;Rectangle{Rectangle.java[Rectangle~getPerimeter@areaFormatted!670!743!677!689!QString;!0!false" name="perimeterFormatted" references="true" stamp="1588594131745" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+package ui;
+
+import business.Employee;
+
+public interface Displayable {
+	
+	default void getDisplayText() {
+		System.out.println(toString());
+	}
+
+}

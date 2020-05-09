@@ -1,0 +1,117 @@
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.text.NumberFormat;
+
+public class ProductLister {
+	
+	private static Scanner sc = new Scanner(System.in);
+	private static ArrayList<String> product = new ArrayList<String>();
+	
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Product Lister\n");
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			String code = getInput("Enter product code: ");
+			product.add(code);
+			input = getInput("Another product? (y/n): ");
+		}
+		
+		StringBuilder message = new StringBuilder(); // Overall msg
+		
+		StringBuilder border = new StringBuilder();
+		
+		message.append("Code");		
+		String space1 = getSpace(product); //Get largest space of code
+		message.append(space1);
+		
+		message.append("Description");
+		ArrayList<String> desc = getDescription(product);
+		String space2 = getSpace(desc);
+		message.append(space2);
+		
+		message.append("Price");
+		ArrayList<String> price = getPrice(product);
+		String space3 = getSpace(price);
+		message.append(space3);
+		
+		String border1 = getBorder(space1);
+		String border2 = getBorder(space2);
+		String border3 = getBorder(space3);
+		
+		message.append("\n"+border1+border2+border3);
+		
+		System.out.println(message);
+		
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+	public static String getSpace(ArrayList<String> product) {
+		StringBuilder spacesb = new StringBuilder();
+		int length = 0;
+		for (String c: product) {
+			if (c.length() > length) {
+				length = c.length();
+			}
+		}
+		for (int i = 0; i < length + 1; i++) {
+			spacesb.append(" ");
+		}
+		String space = spacesb.toString();
+		return space;
+	}
+	
+	public static String getBorder(String space) {
+		int length = space.length();
+		
+		StringBuilder bordersb = new StringBuilder();
+		for (int i = 0; i < length+3; i++) {
+			bordersb.append("~");
+		}
+		bordersb.append(" ");
+		String border = bordersb.toString();
+		return border;
+	}
+	
+	public static ArrayList<String> getDescription(ArrayList<String> product) {
+		ArrayList<String> description = new ArrayList<String>();
+		String desc = "";
+		for (String c: product) {
+			if (c.equalsIgnoreCase("java")) {
+				desc = "Murach's Java Programming";
+				description.add(desc);
+			} else if (c.equalsIgnoreCase("mysql")) {
+				desc = "Murach's MySQL";
+				description.add(desc);
+			} else {
+				desc = "unknown";
+			}
+		}
+		return description;
+	}
+	
+	public static ArrayList<String> getPrice(ArrayList<String> product) {
+		ArrayList<String> priceFormatted = new ArrayList<String>();
+		NumberFormat cur = NumberFormat.getCurrencyInstance();
+		double price = 0.0;
+		for (String c: product) {
+			if (c.equalsIgnoreCase("java")) {
+				price = 57.50;
+				priceFormatted.add(cur.format(price));
+			} else if (c.equalsIgnoreCase("mysql")) {
+				price = 54.50;
+				priceFormatted.add(cur.format(price));
+			} else {
+				price = 0;
+			}
+		}
+		return priceFormatted;
+	}
+
+}

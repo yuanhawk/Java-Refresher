@@ -1,0 +1,16 @@
+package db;
+
+import business.Customer;
+import static CustomerType.CustomerType.*;
+
+public class CustomerDB implements CustomerReader{
+	
+	@Override
+	public Customer getCustomer(String type) {
+		Customer customer = new Customer();
+		customer.setType(type);
+		if (type.equalsIgnoreCase())
+		
+	}
+
+}

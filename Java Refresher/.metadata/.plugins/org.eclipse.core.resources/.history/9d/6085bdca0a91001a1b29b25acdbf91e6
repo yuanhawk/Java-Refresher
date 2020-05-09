@@ -1,0 +1,10 @@
+package ui;
+
+import business.Displayable;
+
+public class DisplayTestApp {
+	
+	public DisplayTestApp(Displayable display) {
+	}
+
+}

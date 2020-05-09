@@ -1,0 +1,36 @@
+package ObjectMethod;
+
+public class Book extends Product{ // declare a subclass
+	
+	private String author;
+	
+	public Book() {
+		super(); // call constructor of Product superclass
+		author = "";
+		count++;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	public String getAuthor() {
+		return author;
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + 
+				" by " + author;
+	}	
+	/* Can access/override fields that have public/protected access in the superclass from the subclcass
+	 * Extend the superclass by adding new fields & methods by coding methods in the subclass
+	 * super keyword to call constructor/method of the class
+	 * 
+	 * Polymorphism - feature of inheritance that lets you treat obj of different subclasses derived fr
+	 * same superclass as if they had the type of superclass
+	 */
+		
+	// setAuthor, getAuthor
+
+}

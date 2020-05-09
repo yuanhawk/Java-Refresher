@@ -1,0 +1,8 @@
+package InterfaceMethodHierarchy;
+
+public interface ProductReader {
+	
+	Product getProduct(String code);
+	String getProducts();
+
+}

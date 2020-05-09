@@ -1,0 +1,154 @@
+package StringMethod;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.text.NumberFormat;
+
+public class ProductLister {
+	
+	private static Scanner sc = new Scanner(System.in);
+	private static ArrayList<StringMethod> product = new ArrayList<StringMethod>();
+	
+	public static void main(StringMethod[] args) {
+		System.out.println("Welcome to the Product Lister\n");
+		
+		StringMethod input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			StringMethod code = getInput("Enter product code: ");
+			product.add(code); //Saving codes in arraylist
+			input = getInput("Another product? (y/n): ");
+		}
+		
+		StringBuilderMethod message = new StringBuilderMethod(); // Overall msg
+		
+		StringMethod header1 = "Code";
+		StringMethod space1 = getSpace(product, header1.length()); //Get largest space of code
+		
+		StringMethod header2 = "Description";
+		ArrayList<StringMethod> desc = getDescription(product);
+		StringMethod space2 = getSpace(desc, header2.length());
+		
+		StringMethod header3 = "Price";
+		ArrayList<StringMethod> price = getPrice(product);
+		StringMethod space3 = getSpace(price, header3.length());
+		
+		message.append(header1 + space1 + header2 + space2 + header3 + space3);
+		
+		StringMethod border1 = getBorder(product, header1.length());
+		StringMethod border2 = getBorder(desc, header2.length());
+		StringMethod border3 = getBorder(price, header3.length());
+		
+		message.append("\n"+border1+border2+border3+"\n");
+		
+		StringBuilderMethod innerMessage = new StringBuilderMethod();
+		for (int i = 0; i < product.size(); i++) {
+			innerMessage.append(product.get(i) + getSpaceInner(product, border1, i));
+			innerMessage.append(desc.get(i) + getSpaceInner(desc, border2, i));
+			innerMessage.append(price.get(i) + getSpaceInner(price, border1, i) + "\n");
+		}
+		
+		message.append(innerMessage);
+		
+		System.out.println(message);
+		
+	}
+	
+	public static StringMethod getInput(StringMethod s) {
+		System.out.println(s);
+		StringMethod input = sc.nextLine();
+		return input;
+	}
+	
+	public static StringMethod getSpace(ArrayList<StringMethod> product, int length) {
+		//Comparing longest product length vs header length
+		StringBuilderMethod spacesb = new StringBuilderMethod();
+		int newl = 0; //longest product length
+		for (StringMethod c: product) {
+			if (c.length() > newl) {
+				newl = c.length();
+			}
+		}
+		
+		StringMethod space = "";
+		if (newl > length) { //longest product length > header length
+			newl -= length;
+			for (int i = 0; i < newl; i++) {
+				spacesb.append(" ");
+			}
+			spacesb.append(" ");
+			space = spacesb.toString();
+		} else {
+			spacesb.append(" ");
+			space = spacesb.toString();
+		}
+		return space;
+	}
+	
+	public static StringMethod getSpaceInner(ArrayList<StringMethod> product, StringMethod border, int i) {
+		StringBuilderMethod spacesb = new StringBuilderMethod();
+		for (int len = product.get(i).length(); len < border.length(); len++) {
+			spacesb.append(" ");
+		}
+		StringMethod space = spacesb.toString();
+		return space;
+	}
+	
+	public static StringMethod getBorder(ArrayList<StringMethod> product, int length) {
+		// Comparing longest product length vs header length
+		int newl = 0;
+		StringBuilderMethod bordersb = new StringBuilderMethod();
+		for (StringMethod c: product) {
+			if (c.length() > newl) {
+				newl = c.length();
+			}
+		}
+		if (length > newl) {
+			newl = length;
+		}
+		
+		for (int i = 0; i < newl; i++) { // Append "=" for the longest length
+			bordersb.append("=");
+		}
+		bordersb.append(" ");
+		StringMethod border = bordersb.toString();
+		return border;
+	}
+	
+	public static ArrayList<StringMethod> getDescription(ArrayList<StringMethod> product) {
+		ArrayList<StringMethod> description = new ArrayList<StringMethod>();
+		StringMethod desc = "";
+		for (StringMethod c: product) {
+			if (c.equalsIgnoreCase("java")) {
+				desc = "Murach's Java Programming";
+				description.add(desc);
+			} else if (c.equalsIgnoreCase("mysql")) {
+				desc = "Murach's MySQL";
+				description.add(desc);
+			} else {
+				desc = "unknown";
+				description.add(desc);
+			}
+		}
+		return description;
+	}
+	
+	public static ArrayList<StringMethod> getPrice(ArrayList<StringMethod> product) {
+		ArrayList<StringMethod> priceFormatted = new ArrayList<StringMethod>();
+		NumberFormat cur = NumberFormat.getCurrencyInstance();
+		double price = 0.0;
+		for (StringMethod c: product) {
+			if (c.equalsIgnoreCase("java")) {
+				price = 57.50;
+				priceFormatted.add(cur.format(price));
+			} else if (c.equalsIgnoreCase("mysql")) {
+				price = 54.50;
+				priceFormatted.add(cur.format(price));
+			} else {
+				price = 0;
+				priceFormatted.add(cur.format(price));
+			}
+		}
+		return priceFormatted;
+	}
+
+}

@@ -1,0 +1,54 @@
+package InterfaceMethod;
+
+public class Book extends Product implements Iprintable {
+	
+	private String author;
+	
+	public Book(String code, String description, double price, String author) {
+		super(code, description, price);
+		this.author = author;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	public String getAuthor() {
+		return author;
+	}
+	
+	private static void printMutiple(Iprintable p, int count) { // method that accepts a Iprintable obj
+		for (int i = 0; i < count; i++) {
+			p.print(); // call the print method of Iprintable
+		}
+		// Can declare a parameter that's used by a method as an interface type, then pass any obj that implements the interface to the parameter
+	}
+	
+	/* Declare a var as an interface type, assign an instance of any obj that implements the interface to the var, pass the var as an argument to
+	 a method that accepts the interface type */
+	
+	/* Code that passes a Product obj to the method
+	Product product = new Product("java", "Murach's Java Programming", 57.50);
+	printMultiple(product, 2);
+	
+	OR
+	
+	Iprintable product = new Product("java", "Murach's Java Programming", 57.50); - Commonly used as a type, points to class instance, interface cannnot create an instance
+	printMultiple(product, 2);
+	*/
+	
+	/*
+	@Override
+	public void print() { // implement the Printable interface
+		System.out.println(super.getDescription() + " by " + author);
+	}*/
+	
+	/* A class inherit another class & implement >= 1 interface(s)
+	 * 
+	 * If a class inherits another class that implements an interface, the subclass automatically implements the interface
+	 * 
+	 * If a class inherits another class that implements an interface, the subclass has access to any methods of the interface
+	 * that are implemented by the superclass and can override those methods
+	 */
+
+}
