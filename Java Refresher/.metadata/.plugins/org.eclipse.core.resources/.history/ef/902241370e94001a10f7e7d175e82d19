@@ -1,0 +1,10 @@
+package business;
+
+import java.util.ArrayList;
+
+public interface LineInvReader {
+	
+	ArrayList<InvCalc> addIc(ArrayList<InvCalc> invCalc);
+	ArrayList<InvCalc> getIc();
+
+}

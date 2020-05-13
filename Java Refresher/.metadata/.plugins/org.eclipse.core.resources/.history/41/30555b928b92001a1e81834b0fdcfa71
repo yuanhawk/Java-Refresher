@@ -1,0 +1,23 @@
+package db;
+
+import en.ProductType;
+
+import business.*;
+
+public class ProductDB {
+	
+	public Product getProduct(ProductType type) {
+		Product product = new Product();
+		LineItem lineItem = new LineItem();
+		if (type == ProductType.JAVA) {
+			lineItem.setCode("java");
+			lineItem.setDesc("Murach's Java Programming");
+			lineItem.setPrice(57.50);
+		} else if (type == ProductType.JSP) {
+			lineItem.setCode("jsp");
+			lineItem.setDesc("Murach's Java Servlets and JSP");
+			lineItem.setPrice(57.50);
+		}
+	}
+
+}

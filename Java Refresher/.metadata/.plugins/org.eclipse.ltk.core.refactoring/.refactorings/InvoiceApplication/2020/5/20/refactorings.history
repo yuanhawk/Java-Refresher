@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;qtyAL&apos; in &apos;ui.Main.main(...)&apos; to &apos;qtyFormattedAL&apos;&#x0D;&#x0A;- Original project: &apos;InvoiceApplication&apos;&#x0D;&#x0A;- Original element: &apos;ui.Main.main(String[]).qtyAL&apos;&#x0D;&#x0A;- Renamed element: &apos;qtyAL&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;qtyAL&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;ui{Main.java[Main~main~\[QString;@qtyAL!360!409!378!382!QArrayList\&lt;QString;&gt;;!0!false" name="qtyFormattedAL" references="true" stamp="1589085620786" version="1.0"/>
+</session>

@@ -1,0 +1,25 @@
+package business;
+
+import java.util.ArrayList;
+
+public class Product {
+	
+	private ArrayList<LineItem> lineItem;
+	
+	public Product() {
+		lineItem = new ArrayList<LineItem>();
+	}
+
+	public ArrayList<LineItem> getLineItem() {
+		return lineItem;
+	}
+
+	public void setLineItem(ArrayList<LineItem> lineItem) {
+		this.lineItem = lineItem;
+	}
+	
+	public ArrayList<LineItem> addLineItem(String code, int qty) {
+		lineItem.add(code, qty);
+	}
+
+}

@@ -1,0 +1,168 @@
+package ui;
+
+import java.util.Scanner;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+
+import db.*;
+import business.*;
+
+public class Main {
+	
+	private static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Invoice application");
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			String code = getInput("Enter product code: ");
+			int qty = getQuantity("Enter quantity: ");
+			
+			ProductGettable pget = new ProductDB();
+			LineItem lineItem = pget.getLineItem(code);
+			lineItem.setCode(code);
+			lineItem.setQty(qty);
+			
+			Product product = new Product();
+			product.addLineItem(lineItem);
+			
+			input = getInput("Another line item? (y/n): ");
+		}
+		
+		String message = getMessage();
+		System.out.println(message);
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+	public static int getQuantity(String s) {
+		int qty = 0;
+		System.out.println(s);
+		
+		while (true) {
+			try {
+				qty = Integer.parseInt(sc.nextLine());
+				break;
+			} catch (NumberFormatException e) {
+				System.out.println("Error! Enter valid integer");
+			}
+		}
+		return qty;
+	}
+	
+	public static String getDescSpace(ArrayList<LineItem> lineItem, String header) {
+		int length = header.length();
+		for (LineItem li: lineItem) {
+			if (li.getDesc().length() > length) {
+				length = li.getDesc().length();
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < length + 1; i++) {
+			sb.append(" ");
+		}
+		String space = sb.toString();
+		return space;
+	}
+	
+	public static String getDescSpace(String header, String space, String desc) {
+		StringBuilder sb = new StringBuilder();
+		int length = header.length() + space.length() - desc.length();
+		
+		for (int i = 0; i < length; i++) {
+			sb.append(" ");
+		}
+			
+		return sb.toString();
+	}
+	
+	public static String getPriceSpace(ArrayList<LineItem> lineItem, String header) {
+		int length = header.length();
+		for (LineItem li: lineItem) {
+			String priceFormatted = NumberFormat.getCurrencyInstance().format(li.getPrice());
+			if (priceFormatted.length() > length) {
+				length = priceFormatted.length();
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < length + 1; i++) {
+			sb.append(" ");
+		}
+		String space = sb.toString();
+		return space;
+	}
+	
+	public static String getPriceSpace(String header, String space, String price) {
+		StringBuilder sb = new StringBuilder();
+		int length = header.length() + space.length() - price.length();
+		
+		for (int i = 0; i < length; i++) {
+			sb.append(" ");
+		}
+			
+		return sb.toString();
+	}
+	
+	public static String getQtySpace(ArrayList<LineItem> lineItem, String header) {
+		int length = header.length();
+		for (LineItem li: lineItem) {
+			String qty = Integer.toString(li.getQty());
+			if (qty.length() > length) {
+				length = qty.length();
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < length + 1; i++) {
+			sb.append(" ");
+		}
+		String space = sb.toString();
+		return space;
+	}
+	
+	public static String getQtySpace(String header, String space, String qty) {
+		StringBuilder sb = new StringBuilder();
+		int length = header.length() + space.length() - qty.length();
+		
+		for (int i = 0; i < length; i++) {
+			sb.append(" ");
+		}
+			
+		return sb.toString();
+	}
+	
+	public static String getMessage() {
+		ProductReader reader = new Product();
+		ArrayList<LineItem> lineItem = reader.getLineItem();
+		
+		System.out.println(lineItem);
+
+		StringBuilder sb = new StringBuilder();
+		String header1 = "Description";
+		String header2 = "Price";
+		String header3 = "Qty";
+		String header4 = "Total";
+		
+		String space1 = getDescSpace(lineItem, header1);
+		String space2 = getPriceSpace(lineItem, header2);
+		String space3 = getQtySpace(lineItem, header3);
+		String message = header1 + space1 + header2 + space2 + header3 + space3 + header4;
+		sb.append(message);
+		
+		
+		for (LineItem li: lineItem) {
+			String priceFormatted = NumberFormat.getCurrencyInstance().format(li.getPrice());
+			String qty = Integer.toString(li.getQty());
+			message = "\n" + li.getDesc() + getDescSpace(header1, space1, li.getDesc())
+				+ priceFormatted + getPriceSpace(header2, space2, priceFormatted)
+				+ li.getQty() + getQtySpace(header3, space3, qty)
+				+ li.getTotal();
+			sb.append(message);
+		}
+		return sb.toString();
+	}
+}

@@ -1,0 +1,7 @@
+package LambdaMethod;
+
+public interface Operation {
+	
+	void Addtion(int a, int b);
+
+}

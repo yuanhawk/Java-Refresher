@@ -1,0 +1,16 @@
+package db;
+
+import static en.ProductType.*;
+import en.ProductType;
+import business.Product;
+
+public class ProductDB implements ProductReader {
+
+	public Product getProduct(ProductType type) {
+		String code = "";
+		
+		if (type == JAVA) {
+			code == "java";
+		}
+	}
+}

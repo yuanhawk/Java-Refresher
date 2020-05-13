@@ -1,0 +1,10 @@
+package business;
+
+public interface LineItemReader {
+	
+	String getCode();
+	String getDesc();
+	double getPrice();
+	int getQty();
+
+}

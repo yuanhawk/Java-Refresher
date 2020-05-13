@@ -1,0 +1,47 @@
+package LambdaMethod;
+
+import java.util.List;
+
+public class LambdaMethod {
+	
+	/* Lambda expressions - similar to a method in an anonymous class, eliminate the enclosing method & anon class
+	 * lambda expression passes the functionality of a method as a parameter, aka anon functions
+	 * 
+	 * Lambda expressions are anon functions that can be passed as arguments to methods
+	 * Allows one to treat the functions like data
+	 * 
+	 * Benefits: Reduce code duplication, write methods that are more flexible and easier to maintain
+	 * Drawbacks: don't work well with debugger, can be inefficient, result in stack traces that are difficult to understand
+	 * Result in code that's difficult to understand, result in code duplication for commonly used functionality
+	 * 
+	 * function
+	 * 1. Name
+	 * 2. Parameter*
+	 * 3. Body*
+	 * 4. Return
+	 * 
+	 * Thread th = new Thread(***new Runnable() { // Name which is redundant, use lambda to skip the name
+	 * 		public void run()*** {
+	 * 			System.out.println("In another thread");
+	 * 		}
+	 * });
+	 * 
+	 * th.start();
+	 * 
+	 * Thread th;
+	 * th = new Thread(() -> Syso("In another thread"));
+	 * 
+	 * Choose Lambda > Anon Class (No extra anon classes created on disk, memory footprint, less garbage collected, runtime would become better)
+	 * Lambda uses invokeDynamic
+	 */
+	
+	List<Contact> contactsWithoutPhone = filterContactsWithoutPhone(contacts); // Filter contacts that don't have phone no.
+	for (Contact p: contactsWithoutPhone) { // print contacts to console
+		System.out.println(p.getName());
+	}
+	vs
+	
+	List<Contact> contactsWithoutPhone = filterContacts(contacts,
+			c -> c.getPhone() == null); // skips through the name of the function & calls the method directly
+
+}

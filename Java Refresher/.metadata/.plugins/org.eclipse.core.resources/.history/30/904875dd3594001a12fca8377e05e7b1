@@ -1,0 +1,17 @@
+package LambdaMethod;
+
+public class StringConcatenation {
+	
+	public static void main(String[] args) {
+		StringConcatenation str = new StringConcatenation();
+		
+		StringOperation so = (String s, String t) -> System.out.println(s + " " + t);
+		
+		so.getMessage("Marcus", "Tan");
+	}
+	
+	public static void getMessage(String s, String t, StringOperation so) {
+		
+	}
+
+}

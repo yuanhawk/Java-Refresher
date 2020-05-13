@@ -1,0 +1,31 @@
+package LambdaMethod;
+
+import java.util.Scanner;
+
+public class MathOperation implements Operation {
+	
+	private static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		MathOperation operation = new MathOperation();
+		
+		int a = getInt("Enter 1st num: ");
+		int b = getInt("Enter 2nd num: ");
+		
+		Operation addition = (a, b) -> a + b;
+		
+		System.out.println(Operation.(a, b, addition));
+		
+		
+	}
+	
+	public static int operate (int a, int b, Operation mathOperation) {
+		return mathOperation(a, b);
+	}
+	
+	public static int getInt(String s) {
+		System.out.println(s);
+		int i = Integer.parseInt(sc.nextLine());
+		return i;
+	}
+}

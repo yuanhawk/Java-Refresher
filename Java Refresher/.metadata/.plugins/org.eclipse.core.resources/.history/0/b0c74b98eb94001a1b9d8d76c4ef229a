@@ -1,0 +1,18 @@
+package DateTimeAPI;
+
+public class DateTimeMethod {
+
+	/* Older Versions of Java
+	 * java.util.package - Date, Calendar, GregorianCalendar classes
+	 * java.text.package - DateFormat / SimpleDateFormat classes
+	 * 
+	 * Not thread-safe (mutable), not intuitive, only restricted to Gregorian calendar
+	 * 
+	 * Java 8 >
+	 * java.time.package
+	 * 
+	 * Thread-safe (immutable), support separate calendars (Lunar calendar)
+	 * 
+	 * 
+	 */
+}

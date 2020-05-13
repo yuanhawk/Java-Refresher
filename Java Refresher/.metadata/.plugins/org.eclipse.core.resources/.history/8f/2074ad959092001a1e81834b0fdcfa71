@@ -1,0 +1,52 @@
+package ui;
+
+import java.util.Scanner;
+
+import db.*;
+import business.LineItem;
+import business.Product;
+
+public class Main {
+	
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Invoice application");
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			String code = getInput("Enter product code: ");
+			int qty = getQuantity("Enter quantity: ");
+			
+			ProductGettable pget = new ProductDB();
+			LineItem lineItem = pget.getLineItem(code);
+			lineItem.setQty(qty);
+			
+			Product product = new Product();
+			product.addLineItem(lineItem);
+		}
+		
+		
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+	public static int getQuantity(String s) {
+		int qty = 0;
+		System.out.println(s);
+		
+		while (true) {
+			try {
+				qty = Integer.parseInt(sc.nextLine());
+				break;
+			} catch (NumberFormatException e) {
+				System.out.println("Error! Enter valid integer");
+			}
+		}
+		return qty;
+	}
+}

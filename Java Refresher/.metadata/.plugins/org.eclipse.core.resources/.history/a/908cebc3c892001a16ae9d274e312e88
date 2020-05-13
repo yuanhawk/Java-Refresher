@@ -1,0 +1,16 @@
+package LambdaMethod;
+
+public class LambdaMethod {
+	
+	/* Lambda expressions - similar to a method in an anonymous class, eliminate the enclosing method & anon class
+	 * lambda expression passes the functionality of a method as a parameter, aka anon functions
+	 * 
+	 * Lambda expressions are anon functions that can be passed as arguments to methods
+	 * Allows one to treat the functions like data
+	 * 
+	 * Benefits: Reduce code duplication, write methods that are more flexible and easier to maintain
+	 * Drawbacks: don't work well with debugger, can be inefficient, result in stack traces that are difficult to understand
+	 * Result in code that's difficult to understand, result in code duplication for commonly used functionality
+	 */
+
+}

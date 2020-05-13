@@ -1,0 +1,97 @@
+package ui;
+
+import java.util.Scanner;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+
+import business.*;
+
+public class Main {
+	
+	private static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		System.out.println("Future Value Calculations");
+		ArrayList<InvCalc> ic = new ArrayList<InvCalc>();
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			double monInv = getDouble("Enter monthly investment ($): ");
+			double rate = getDouble("Enter interest rate: (%): ");
+			double years = getDouble("Enter number of year(s): ");
+			
+			ic.add(new InvCalc(monInv, rate, years));
+			
+			LineInvReader lir = new LineInv();
+			lir.addIc(ic);
+			
+			input = getInput("Continue? (y/n): ");
+		}
+		
+		System.out.println("Future Value Calculations\n\n");
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+	public static double getDouble(String s) {
+		System.out.println(s);
+		double db;
+		while(true) {
+			try {
+				db = Double.parseDouble(sc.nextLine());
+				break;
+			} catch (NumberFormatException e) {
+				System.out.println("Error, enter valid number");
+			}
+		}
+		return db;
+	}
+
+	public String getInvSpace(String header) {
+		int length = header.length();
+		
+		LineInvReader lir = new LineInv();
+		ArrayList<InvCalc> ic = lir.getIc();
+		
+		for (InvCalc inc: ic) {
+			switch(header) {
+				case "Inv/Mo.":
+					String invMon = NumberFormat.getCurrencyInstance().format(inc.getMonthlyInv());
+					if (invMon.length() > length) {
+						length = invMon.length();
+					}
+					break;
+				case "Rate":
+					String rate = NumberFormat.getPercentInstance().format(inc.getRate());
+					if (rate.length() > length) {
+						length = rate.length();
+					}
+					break;
+				case "Years":
+					String years = Double.toString(inc.getYears());
+					if (years.length() > length) {
+						length = years.length();
+					}
+					break;
+				case "Future Value":
+					String futureValue = NumberFormat.getCurrencyInstance().format(inc.getFutureValue());
+					if (futureValue.length() > length) {
+						length = futureValue.length();
+					}
+					break;
+			}
+
+		}
+
+		length -= header.length();;
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < length + 1; i++) {
+			sb.append(" ");
+		}
+		return sb.toString();
+	}
+}

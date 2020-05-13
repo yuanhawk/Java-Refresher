@@ -1,0 +1,50 @@
+package ui;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+import business.*;
+
+public class Main {
+	
+	private static Scanner sc = new Scanner(System.in);
+	private static ArrayList<InvCalc> ic = new ArrayList<InvCalc>();
+	
+	public static void main(String[] args) {
+		System.out.println("Future Value Calculations");
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			double monInv = getDouble("Enter monthly investment ($): ");
+			double rate = getDouble("Enter interest rate: (%): ");
+			double years = getDouble("Enter number of year(s): ");
+			
+			ic.add(new InvCalc(monInv, rate, years));
+			
+			
+			
+			
+		}
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+	public static double getDouble(String s) {
+		System.out.println(s);
+		double db;
+		while(true) {
+			try {
+				db = Double.parseDouble(sc.nextLine());
+				break;
+			} catch (NumberFormatException e) {
+				System.out.println("Error, enter valid number");
+			}
+		}
+		return db;
+	}
+
+}

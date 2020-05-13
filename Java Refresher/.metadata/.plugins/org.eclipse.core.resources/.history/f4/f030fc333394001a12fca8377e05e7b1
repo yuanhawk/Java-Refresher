@@ -1,0 +1,17 @@
+package LambdaMethod;
+
+public class MathOperation {
+	
+	public static void main(String[] args) {
+		MathOperation mathOperation = new MathOperation();
+		
+		Operation addition = (int a, int b) -> a + b;
+		
+		System.out.println(mathOperation.method(10, 5, addition));
+	}
+	
+	public static int method(int a, int b, Operation operation) {
+		return operation.operate(a, b);
+	}
+
+}

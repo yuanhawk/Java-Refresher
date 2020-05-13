@@ -1,0 +1,21 @@
+package business;
+
+import java.util.ArrayList;
+
+public class LineInv {
+	
+	private ArrayList<LineInv> li;
+	
+	public LineInv() {
+		li = new ArrayList<LineInv>();
+	}
+
+	public ArrayList<LineInv> addLi(ArrayList<LineInv> lineInv) {		
+		li.add(lineInv);
+	}
+	
+	public ArrayList<LineInv> getLi() {
+		return li;
+	}
+
+}

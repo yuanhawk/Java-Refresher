@@ -1,0 +1,90 @@
+package ui;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import business.Product;
+import db.*;
+
+public class Main {
+	
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Invoice application");
+		
+		ArrayList<String> codeAL = new ArrayList<String>();
+		ArrayList<String> qtyAL = new ArrayList<String>();
+		
+		String input = "y";
+		while(input.equalsIgnoreCase("y")) {
+			String code = getInput("Enter product code: ");
+			int qty = getQty("Enter quantity: ");
+			String qtyFormatted = Integer.toString(qty);
+			
+			codeAL.add(code);
+			qtyAL.add(qtyFormatted);
+			
+			input = getInput("Another line item? (y/n): ");
+		}
+		
+		ArrayList<String> descAL = new ArrayList<String>();
+		ArrayList<String> priceAL = new ArrayList<String>();
+		
+		ProductReader reader = new ProductDB();
+		for(String c: codeAL) {
+			Product product = reader.getProduct(c);
+			descAL.add(product.getDesc());
+			priceAL.add(product.getPriceFormatted());
+		}
+		
+		String header1 = "Description";
+		String header2 = "Price";
+		String header3 = "Qty";
+		String header4 = "Total";
+		
+		String space1 = getSpace(descAL, header1);
+		String space2 = getSpace(priceAL, header2);
+		String space3 = getSpace(qtyAL, header3);
+		
+		String message = header1 + space1 + header2 + space2 + header3 + space3 + header4 + "\n";
+		System.out.println(message);
+	}
+	
+	public static String getInput(String s) {
+		System.out.println(s);
+		String input = sc.nextLine();
+		return input;
+	}
+	
+	public static int getQty(String s) {
+		int qty = 0;
+		System.out.println(s);
+		while (true) {
+			try {
+				qty = Integer.parseInt(sc.nextLine());
+				break;
+			} catch (NumberFormatException e) {
+				System.out.println("Error! Please enter valid integer");
+			}
+		}
+		return qty;
+	}
+	
+	public static String getSpace(ArrayList<String> value, String header) {
+		int length = header.length();
+		for (String v: value) {
+			if (v.length() > length) {
+				length = v.length();
+			}
+		}
+		StringBuilder spaceSB = new StringBuilder();
+		length -= header.length();
+		for (int i = 0; i < length + 1; i++) {
+			spaceSB.append(" ");
+		}
+		String space = spaceSB.toString();
+		return space;
+	}
+
+}

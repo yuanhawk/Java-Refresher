@@ -1,0 +1,27 @@
+package business;
+
+import java.util.ArrayList;
+
+public class LineInv {
+	
+	private ArrayList<LineInv> li;
+	
+	public LineInv() {
+		li = new ArrayList<LineInv>();
+	}
+
+	public ArrayList<LineInv> addLi(double inv, double rate, double years) {		
+		InvCalc ic = new InvCalc();
+		ic.setMonthlyInv(inv);
+		ic.setRate(rate);
+		ic.setYears(years);
+		li.add(ic);
+	}
+	
+	public ArrayList<LineInv> getLi() {
+		return li;
+	}
+	
+	
+
+}

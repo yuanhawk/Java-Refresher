@@ -1,0 +1,22 @@
+package business;
+
+import java.util.ArrayList;
+
+public class LineInv implements LineInvReader {
+	
+	private ArrayList<InvCalc> ic;
+	
+	public LineInv() {
+		ic = new ArrayList<InvCalc>();
+	}
+
+	public void addLineInv(InvCalc inc) {		
+		ic.add(inc);
+	}
+	
+	public ArrayList<InvCalc> getLineInv() {
+		System.out.println(ic);
+		return ic;
+	}
+
+}

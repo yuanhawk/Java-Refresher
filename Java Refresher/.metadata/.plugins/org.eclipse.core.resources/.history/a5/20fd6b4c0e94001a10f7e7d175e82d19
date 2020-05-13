@@ -1,0 +1,22 @@
+package business;
+
+import java.text.NumberFormat;
+import java.util.ArrayList;
+
+public class LineInv implements LineInvReader {
+	
+	private ArrayList<InvCalc> ic;
+	
+	public LineInv() {
+		ic = new ArrayList<InvCalc>();
+	}
+
+	public void addIc(InvCalc invCalc) {		
+		ic.add(invCalc);
+	}
+	
+	public ArrayList<InvCalc> getIc() {
+		return ic;
+	}
+
+}

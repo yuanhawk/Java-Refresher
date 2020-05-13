@@ -2,7 +2,7 @@ package ArrayMethod;
 
 public class ArrayListMethod {
 	
-	/* Use ArrayList
+	/* java.util.ArrayList
 	 * ArrayList<String> Name = new ArrayList<String>(); adjustable arrays, similar to python list
 	 * 
 	 * Differences: Arrays - fixed, ArrayList - able to resize

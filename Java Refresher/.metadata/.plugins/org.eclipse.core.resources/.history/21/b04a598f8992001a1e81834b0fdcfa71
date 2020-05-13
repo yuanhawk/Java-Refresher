@@ -1,0 +1,29 @@
+package business;
+
+import java.util.ArrayList;
+
+public class Product {
+	
+	private ArrayList<LineItem> lineItems;
+	
+	public Product() {
+		lineItems = new ArrayList<LineItem>();
+	}
+	
+	public void addLineItem(LineItem lineItem) {
+		lineItems.add(lineItem);
+	}
+	
+	public LineItem getLineItem() {
+		return lineItems;
+	}
+	
+	public double getTotal() {
+		double invoiceTotal = 0;
+		for (LineItem lineItem: lineItems) {
+			invoiceTotal += lineItem.getTotal();
+		}
+		return invoiceTotal;
+	}
+
+}

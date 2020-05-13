@@ -1,0 +1,43 @@
+package DateTimeAPI;
+
+public class DateTimeMethod {
+
+	/* Older Versions of Java
+	 * java.util.package - Date, Calendar, GregorianCalendar classes
+	 * java.text.package - DateFormat / SimpleDateFormat classes
+	 * 
+	 * Not thread-safe (mutable), not intuitive, only restricted to Gregorian calendar
+	 * 
+	 * Java 8 >
+	 * java.time.package
+	 * 
+	 * Thread-safe (immutable), support separate calendars (Lunar calendar)
+	 * 
+	 * Class: LocalDate - date only, LocalTime - time only, LocalDateTime - date + time
+	 * Enum: Month -- JAN - DEC, DayOfWeek -- MON - SUN
+	 * 
+	 * now() - returns obj for current local date, time, or date/time
+	 * of(parameter) - date: year, mon, day parameter
+	 * 				time: hour, min, sec, nanosec (sec, nanosec defaulted to 0)
+	 * 				date/time, specify all parameter
+	 * parse(string) - date: YYYY-MM-DD
+	 * 				time: HH:MM:SS.NNNNNNNNN
+	 * 				date/time: date + "T" + time
+	 * 
+	 * getYear() - returns current year as integer
+	 * getMonth() - returns current Months obj
+	 * getMonthValue() - returns current month as integer
+	 * getDayOfMonth() - returns current day of the month as integer
+	 * getDayOfYear() - returns current day of the year as integer
+	 * getDayOfWeek() - returns current day of the week as DayOfWeek obj
+	 * getHour() - current hour as integer (24-hr format)
+	 * getMinute() - current min of the hr as integer
+	 * getSecond() - current second of the min as integer
+	 * getNano() - current nanosec of the sec as integer
+	 * 
+	 * LocalDateTime class supports all the get methods
+	 * LocalDate class supports only the get methods for dates
+	 * LocalTime class supports only the get methods for time
+	 * LocalDate, LocalTime and LocalDateTime obj are immutable, there are no corresponding set methods
+	 */
+}

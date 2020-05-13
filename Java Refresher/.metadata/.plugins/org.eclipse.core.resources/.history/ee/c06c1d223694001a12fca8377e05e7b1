@@ -1,0 +1,10 @@
+package LambdaMethod;
+
+public class StringConcatenation {
+	
+	public static void main(String[] args) {
+		StringOperation so = (String s, String t) -> System.out.println(s + " " + t);
+		
+		so.operate("Marcus", "Tan");
+	}
+}
